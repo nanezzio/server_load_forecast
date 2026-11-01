@@ -7,10 +7,10 @@ qt_standard_project_setup()
 
 qt_add_executable(server_method
     WIN32 MACOSX_BUNDLE
-    main.cpp
-    mainwindow.cpp
-    mainwindow.h
-    mainwindow.ui
+    src/main.cpp
+    src/mainwindow.cpp
+    src/mainwindow.h
+    src/mainwindow.ui
 )
 
 target_link_libraries(server_method
