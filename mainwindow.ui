@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry"><rect><x>0</x><y>0</y><width>1100</width><height>800</height></rect></property>
+  <property name="windowTitle"><string>Прогноз нагрузки сервера</string></property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="mainLayout">
+    <item><layout class="QHBoxLayout" name="settingsLayout">
+     <item><widget class="QLabel" name="iterationsLabel"><property name="text"><string>Итерации:</string></property></widget></item>
+     <item><widget class="QSpinBox" name="iterationsSpinBox"><property name="minimum"><number>1</number></property><property name="maximum"><number>5000000</number></property><property name="value"><number>100000</number></property></widget></item>
+     <item><widget class="QLabel" name="stepLabel"><property name="text"><string>Шаг, запросов/с:</string></property></widget></item>
+     <item><widget class="QSpinBox" name="stepSpinBox"><property name="minimum"><number>1</number></property><property name="maximum"><number>20</number></property><property name="value"><number>1</number></property></widget></item>
+     <item><widget class="QLabel" name="durationLabel"><property name="text"><string>Ступень, с:</string></property></widget></item>
+     <item><widget class="QSpinBox" name="durationSpinBox"><property name="minimum"><number>5</number></property><property name="maximum"><number>60</number></property><property name="value"><number>10</number></property></widget></item>
+     <item><widget class="QLabel" name="thresholdLabel"><property name="text"><string>Порог, мс:</string></property></widget></item>
+     <item><widget class="QSpinBox" name="thresholdSpinBox"><property name="minimum"><number>1</number></property><property name="maximum"><number>30000</number></property><property name="value"><number>500</number></property></widget></item>
+    </layout></item>
+    <item><layout class="QHBoxLayout" name="buttonsLayout">
+     <item><widget class="QPushButton" name="startButton"><property name="text"><string>Начать / продолжить (5 ступеней)</string></property></widget></item>
+     <item><widget class="QPushButton" name="stopButton"><property name="text"><string>Остановить</string></property></widget></item>
+     <item><widget class="QPushButton" name="validateButton"><property name="text"><string>Проверить прогноз</string></property></widget></item>
+     <item><widget class="QPushButton" name="clearButton"><property name="text"><string>Очистить данные</string></property></widget></item>
+    </layout></item>
+    <item><widget class="QLabel" name="statusLabel"><property name="text"><string>Готово. Каждое нажатие добавляет до пяти ступеней. Настройки нагрузки меняются после очистки.</string></property><property name="wordWrap"><bool>true</bool></property></widget></item>
+    <item><widget class="QLabel" name="resultLabel"><property name="text"><string>Модель и прогноз появятся после измерений.</string></property><property name="wordWrap"><bool>true</bool></property></widget></item>
+    <item><widget class="QTableWidget" name="measurementsTable">
+     <property name="maximumSize"><size><width>16777215</width><height>210</height></size></property>
+     <property name="editTriggers"><set>QAbstractItemView::NoEditTriggers</set></property>
+     <column><property name="text"><string>Этап</string></property></column>
+     <column><property name="text"><string>Задано, запросов/с</string></property></column>
+     <column><property name="text"><string>Отправлено, запросов/с</string></property></column>
+     <column><property name="text"><string>Среднее, мс</string></property></column>
+     <column><property name="text"><string>Запросы</string></property></column>
+     <column><property name="text"><string>Ошибки</string></property></column>
+    </widget></item>
+    <item><widget class="QWidget" name="chartContainer" native="true"><layout class="QVBoxLayout" name="chartLayout"/></widget></item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,7 @@
+# Результаты сборки и локальные настройки Qt Creator.
+build/
+.qtcreator/
+CMakeLists.txt.user*
+
+# Временные файлы создания презентации.
+presentation/build/
